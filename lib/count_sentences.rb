@@ -2,21 +2,21 @@ require 'pry'
 
 class String
 
-  def sentence?("Hi, my name is Sophie")
+  def sentence?
     self.end_with?(".")
   end
 
-  def question?(string)
+  def question?
    self.end_with?("?")
   end
-  "What's your name?"
+  
 
-  def exclamation?("Hi, my name is Sophie!")
+  def exclamation?
     self.end_with("!")
   end
 
-  def count_sentences(string)
-   "one. two. three?".count_sentences
+  def count_sentences
+   self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
   end
   
 end
